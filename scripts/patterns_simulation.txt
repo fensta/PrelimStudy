@@ -1,0 +1,93 @@
+# Sums up patterns in effect_of_difficulty_on_reliability.py
+# It's manually created from analyzing the plots created by plot_easy_vs_difficult_all() from
+# effects_of_difficulty_on_reliability.py
+
+training set size = k={2,3,4,5,6,7,8,9,10}
+easy_vs_difficult
+EASY is better than DIFFICULT: 1
+DIFFICULT is better than EASY: 2
+Draw: 0
+
+min_annos: 2
+
+metric: edit
+-----------------
+SU
+Stratum     2   3   4   5   6   7   8   9   10
+----------------------------------------------
+early       0   0   0   0   0   2   2   0   1
+late        0   1   1   1   1   1   1   1   1
+
+
+MD
+Stratum     2   3   4   5   6   7   8   9   10
+----------------------------------------------
+early       0   0   0   2   2   2   1   1   1
+late        0   0   0   1   1   1   1   1   1
+
+
+metric: subsequence
+-----------------
+SU
+Stratum     2   3   4   5   6   7   8   9   10
+----------------------------------------------
+early       0   0   0   0   0   2   2   0   1
+late        0   1   1   2   1   2   1   1   1
+
+
+MD
+Stratum     2   3   4   5   6   7   8   9   10
+----------------------------------------------
+early       0   0   0   2   0   0   1   1   1
+late        0   2   0   0   0   1   1   1   1
+
+
+metric: substring
+-----------------
+SU
+Stratum     2   3   4   5   6   7   8   9   10
+----------------------------------------------
+early       0   0   0   0   0   2   2   0   1
+late        0   1   1   1   1   2   1   1   1
+
+MD
+Stratum     2   3   4   5   6   7   8   9   10
+----------------------------------------------
+early       0   0   0   0   0   1   1   1   1
+late        0   2   0   1   1   2   1   1   1
+
+###########
+# SUMMARY #
+###########
+
+using training sets containing 2-10 tweets
+----------------------------------------------
+total tests: 108
+total occurrences of 0: 43
+total occurrences of 1: 49
+total occurrences of 2: 16
+
+Tables used for statistical significance test (Fisher's exact test)
+
+first column: outcomes of tests (occurrences of 0,1,2 in a stage)
+first row: stage
+
+1 vs. 2:
+        | early   late
+--------------------------
+1       |   13     36
+2       |   10      6
+
+
+1 vs. 0:
+        | early   late
+--------------------------
+0       |   31     12
+1       |   13     36
+
+
+2 vs. 0:
+        | early   late
+--------------------------
+0       |   31     12
+2       |   10      6
